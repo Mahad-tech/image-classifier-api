@@ -5,3 +5,6 @@ __pycache__/
 *.pth
 notebooks/
 .pytest_cache/
+data/
+models/
+test_rose.jpg
