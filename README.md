@@ -1,7 +1,7 @@
 # image-classifier-api
 
 Flower image classifier REST API using fine-tuned EfficientNet-B0 (PyTorch).
-Upload any flower image — get back the class name and confidence score.
+Upload any flower image get back the class name and confidence score.
 
 ## Classes
 
@@ -70,7 +70,7 @@ pytest tests/ -v
 
 ## Design Decisions
 
-- EfficientNet-B0 chosen — lightweight, accurate, fast on CPU
-- All layers frozen except final classifier — transfer learning not training from scratch
-- Multi-stage Dockerfile — smaller final image
-- Model weights excluded from Git — too large, train locally with python src/model.py
+- EfficientNet-B0 chosen lightweight, accurate, fast on CPU
+- All layers frozen except final classifier transfer learning not training from scratch
+- Multi-stage Dockerfile smaller final image
+- Model weights excluded from Git too large, train locally with python src/model.py
