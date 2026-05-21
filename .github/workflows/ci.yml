@@ -1,0 +1,29 @@
+name: Image Classifier CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install torch torchvision pillow fastapi uvicorn pytest httpx pydantic python-multipart
+
+      - name: Run import tests only
+        run: |
+          python -c "from src.model import build_model, predict_image; print('Import OK')"
+          python -c "from src.schemas import PredictionResponse; print('Import OK')"
+          python -c "from app import app; print('Import OK')"
